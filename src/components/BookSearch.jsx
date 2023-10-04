@@ -43,7 +43,7 @@ const BookSearch = ({books}) => {
   }
   return (
       <div className="main" >
-         <span className="label">author: </span>
+         <label className="label">author: </label>
           <input
                   data-testid="author"
                   type="text"
