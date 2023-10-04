@@ -2,11 +2,12 @@ import {React, useState, useEffect} from "react";
 import ReactDOM from "react-dom";
 import BookSearch from "./components/BookSearch";
 
+
 /* Changes made to this file will not affect your tests.
  * This file is used to control the behavior of the web preview. 
 */
 
-const books = [
+let books = [
   {
     "author": "Chinua Achebe",
     "country": "Nigeria",
@@ -41,16 +42,16 @@ const books = [
   },
 ];
 
-const App = props => {
+const App = () => {
 
-  const[book, setBooks] = useState()
 
-useEffect(()=>{
-  fetch(" http://localhost:3000/booksData")
-  .then(res => res.json())
-  .then(books => console.log(books))
-})
+  const [books,setBooks] = useState([])
 
+  useEffect(()=>{
+    fetch("http://localhost:3000/booksData")
+    .then(res=>res.json())
+    .then(res=> setBooks(res))
+  },[])
   return (
     <div id="app">
       <BookSearch books={books} />

@@ -42,10 +42,9 @@ const BookSearch = ({books}) => {
     return sortedBooks
   }
   return (
-      <div className="main" >
-         <label className="label">author:  </label>
+      <div >
+         <span className="label">author: </span>
           <input
-                  className="input"
                   data-testid="author"
                   type="text"
                   required
@@ -59,7 +58,6 @@ const BookSearch = ({books}) => {
           <label className="label">title:  </label>
           <input 
                   data-testid="title"
-                  className="input"
                   type="text"
                   required
                   onChange={(e)=>{
@@ -72,7 +70,6 @@ const BookSearch = ({books}) => {
           <input 
                   
                   data-testid="country"
-                  className="input"
                   type="search"
                   required
                   onChange={(e)=>{
@@ -84,7 +81,6 @@ const BookSearch = ({books}) => {
           <label className="label">language: </label>
           <input 
                   data-testid="language"
-                  className="input"
                   type="text"
                   required
                   onChange={(e)=>{
@@ -96,7 +92,6 @@ const BookSearch = ({books}) => {
           <label className="label">year: </label>
           <input
                   data-testid="year"
-                  className="input"
                   type="text"
                   required
                   onChange={(e)=>{
