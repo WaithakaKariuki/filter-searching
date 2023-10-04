@@ -1,6 +1,7 @@
 import {React, useState, useEffect} from "react";
 import ReactDOM from "react-dom";
 import BookSearch from "./components/BookSearch";
+import BookSearches from "./components/BookSearches";
 
 
 /* Changes made to this file will not affect your tests.
@@ -55,6 +56,7 @@ const App = () => {
   return (
     <div id="app">
       <BookSearch books={books} />
+      <BookSearches books={books} />
     </div>
   );
 }
