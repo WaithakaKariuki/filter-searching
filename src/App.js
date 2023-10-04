@@ -43,8 +43,10 @@ const books = [
 
 const App = props => {
 
+  const[book, setBooks] = useState()
+
 useEffect(()=>{
-  fetch("https://http://localhost:3000/")
+  fetch(" http://localhost:3000/booksData")
   .then(res => res.json())
   .then(books => console.log(books))
 })
