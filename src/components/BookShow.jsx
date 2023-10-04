@@ -5,10 +5,11 @@ import './styles.css'
 function BooShow({book}){
 //   console.log(book.author)
   return(
-    <div data-testid="book" className="title">
+    <div data-testid="book" className="show">
 
-      <span className="author">author:</span>
-        <label className="label">{book.author}</label><br/>
+<div className='main1'>
+      <span className="span">author:</span>
+        <label className="label">{book.author}</label><br />      
       <span className="span">country:</span>
         <label className="label">{book.country}</label><br/>
       <span className="span">language:</span>
@@ -17,9 +18,9 @@ function BooShow({book}){
         <label className="label">{book.pages}</label><br/>
       <span className="span">title:</span>
         <label className="label">{book.title}</label><br/>
-      <span className="span">year:</span>
-        <label>{book.year}</label><br/>
-      
+      <span className="span">year:  </span>
+        <label className="label">{book.year}</label>
+        </div>  
     </div>
   )
 }

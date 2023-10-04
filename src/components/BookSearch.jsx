@@ -42,10 +42,12 @@ const BookSearch = ({books}) => {
     return sortedBooks
   }
   return (
-      <div >
+      <div className="main" >
+        <div className="main2">
          <span className="label">author: </span>
           <input
                   data-testid="author"
+                  className="input"
                   type="text"
                   required
                   onChange={(e)=>{
@@ -58,6 +60,7 @@ const BookSearch = ({books}) => {
           <label className="label">title:  </label>
           <input 
                   data-testid="title"
+                  className="input"
                   type="text"
                   required
                   onChange={(e)=>{
@@ -70,6 +73,7 @@ const BookSearch = ({books}) => {
           <input 
                   
                   data-testid="country"
+                  className="input"
                   type="search"
                   required
                   onChange={(e)=>{
@@ -81,6 +85,7 @@ const BookSearch = ({books}) => {
           <label className="label">language: </label>
           <input 
                   data-testid="language"
+                  className="input"
                   type="text"
                   required
                   onChange={(e)=>{
@@ -92,6 +97,7 @@ const BookSearch = ({books}) => {
           <label className="label">year: </label>
           <input
                   data-testid="year"
+                  className="input"
                   type="text"
                   required
                   onChange={(e)=>{
@@ -100,11 +106,14 @@ const BookSearch = ({books}) => {
                   payload: e.target.value,
                   })
                   }}></input>
-        <div > 
+
+</div>
+        <div className="title"> 
           {transformBooks().map((book)=>(
             <BookShow key={book.key} book={book}/>     
           ))} 
         </div>
+
       </div>
   );
 };
