@@ -18,32 +18,35 @@ function BookShows({books}) {
     })
   }
 
+ function transformBooks(){
+  let sortedBooks = books
+  if (filterBy.author){
+    sortedBooks = sortedBooks.filter((book) => // filter all the books and return only those that include the search query
+      book.author.toLowerCase().includes(filterBy.author)
+    )}
+  if(filterBy.title){
+      sortedBooks = sortedBooks.filter((book) =>
+      book.title.toLowerCase().includes(filterBy.title) 
+    )}
+   if (filterBy.country){
+    sortedBooks = sortedBooks.filter((book) =>
+  book.country.toLowerCase().includes(filterBy.country)    
+                               )}
+  if (filterBy.language){
+    sortedBooks = sortedBooks.filter((book) =>
+  book.language.toLowerCase().includes(filterBy.language)    
+                               )}
+  if (filterBy.year){
+    sortedBooks = sortedBooks.filter((book) =>
+  book.year.toString().includes(filterBy.year)    
+                               )}
+  return sortedBooks
+ }
 
-  const sortedBooks = books.filter(book=>{
-    if(filterBy.author === "" && filterBy.country === "" && filterBy.title === "" && filterBy.language === "" && filterBy.year === ""){
-      return true
-    }
-    if(book.author.toLowerCase().includes(filterBy.author)){
-      return book
-    }
-    if(book.country.toLowerCase().includes(filterBy.country)){
-      return book
-    }
-    if(book.language.toLowerCase().includes(filterBy.language)){
-      return book
-    }
-    if(book.title.toLowerCase().includes(filterBy.title)){
-      return book
-    }
-    if(book.year.toString().includes(filterBy.year)){
-      return book
-    }
-  })
-console.log(sortedBooks)
 
-  const showBooks = sortedBooks.map(book => {
+  const showBooks = transformBooks().map((book,idx) => {
     return(
-    <div key={book.id} data-testid="book" className="show">
+    <div key={idx} data-testid="book" className="show">
       <div className='main1'>
       <span className="span">author:</span>
         <label className="label">{book.author}</label><br />      
