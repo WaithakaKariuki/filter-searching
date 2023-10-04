@@ -2,7 +2,7 @@ import React  from "react";
 import {useReducer} from 'react'
 import BookShow from "./BookShow"
 import './styles.css'
-import {bookReducer} from './reducer'  //import the reducer function
+import {bookReducer} from './Reducer'  //import the reducer function
 
 
 const BookSearch = ({books}) => {
@@ -42,7 +42,7 @@ const BookSearch = ({books}) => {
     return sortedBooks
   }
   return (
-      <div >
+      <div className="main" >
          <span className="label">author: </span>
           <input
                   data-testid="author"
