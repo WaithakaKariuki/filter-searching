@@ -1,4 +1,4 @@
-import React from "react";
+import {React, useState, useEffect} from "react";
 import ReactDOM from "react-dom";
 import BookSearch from "./components/BookSearch";
 
@@ -42,6 +42,13 @@ const books = [
 ];
 
 const App = props => {
+
+useEffect(()=>{
+  fetch("https://http://localhost:3000/")
+  .then(res => res.json())
+  .then(books => console.log(books))
+})
+
   return (
     <div id="app">
       <BookSearch books={books} />
