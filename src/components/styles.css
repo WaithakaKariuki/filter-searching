@@ -1,57 +1,42 @@
 .main {
     margin :1em;
     padding-right: 20px;
-  }
-
+}
 .main2{
     margin-right :100%;
     text-transform: capitalize;
     text-align: right;
 }
-
 .main1{
     text-align: justify;
 }
-  .title{
+.title{
     margin :2em;
     display: flex;
     flex-wrap: wrap;
     flex-shrink: 0;
-
-  }
-  
-  .author{
+}
+.author{
     margin: 1em;
     margin-bottom: 2em;
     flex-wrap: wrap-reverse;
-    
-      
-    }
-  
-  .label{
-    /* margin: 1em; */
+}  
+.label{
     padding-left: 20px;
     padding-block: 5px;
     margin-bottom: 10px ;
-    /* padding: 1em; */
-    /* text-align: start; */
-
-  }
-  .span{
-    /* padding: 20px; */
-    /* padding-left: 20px; */
-    
-  }
-  .year{
+}
+.span{
+    padding: 10px;
+    padding-left: 10px;   
+}
+.year{
     padding-top: 20px;
-  }
+}
 .input{
-    /* display: flex; */
     padding-left: 20px;
     padding-block: 5px;
-    margin-bottom: 10px ;
-
-    
+    margin-bottom: 10px ;  
 }
 .show{
     margin:1em;
