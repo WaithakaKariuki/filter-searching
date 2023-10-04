@@ -21,7 +21,7 @@ function BookShows({books}) {
  function transformBooks(){
   let sortedBooks = books
   if (filterBy.author){
-    sortedBooks = sortedBooks.filter((book) => // filter all the books and return only those that include the search query
+      sortedBooks = sortedBooks.filter((book) => // filter all the books and return only those that include the search query
       book.author.toLowerCase().includes(filterBy.author)
     )}
   if(filterBy.title){
@@ -29,22 +29,22 @@ function BookShows({books}) {
       book.title.toLowerCase().includes(filterBy.title) 
     )}
    if (filterBy.country){
-    sortedBooks = sortedBooks.filter((book) =>
-  book.country.toLowerCase().includes(filterBy.country)    
+      sortedBooks = sortedBooks.filter((book) =>
+      book.country.toLowerCase().includes(filterBy.country)    
                                )}
   if (filterBy.language){
-    sortedBooks = sortedBooks.filter((book) =>
-  book.language.toLowerCase().includes(filterBy.language)    
+      sortedBooks = sortedBooks.filter((book) =>
+      book.language.toLowerCase().includes(filterBy.language)    
                                )}
   if (filterBy.year){
-    sortedBooks = sortedBooks.filter((book) =>
-  book.year.toString().includes(filterBy.year)    
+      sortedBooks = sortedBooks.filter((book) =>
+      book.year.toString().includes(filterBy.year)    
                                )}
   return sortedBooks
  }
 
 
-  const showBooks = transformBooks().map((book,idx) => {
+  const showBooks = (transformBooks()).map((book,idx) => {
     return(
     <div key={idx} data-testid="book" className="show">
       <div className='main1'>

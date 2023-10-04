@@ -42,12 +42,10 @@ const BookSearch = ({books}) => {
     return sortedBooks
   }
   return (
-      <div className="main" >
-        <div className="main2">
+      <div >
          <span className="label">author: </span>
           <input
-                  id="author"
-                  className="input"
+                  data-testid="author"
                   type="text"
                   required
                   onChange={(e)=>{
@@ -59,8 +57,7 @@ const BookSearch = ({books}) => {
            </input><br/>
           <label className="label">title:  </label>
           <input 
-                  id="title"
-                  className="input"
+                  data-testid="title"
                   type="text"
                   required
                   onChange={(e)=>{
@@ -72,8 +69,7 @@ const BookSearch = ({books}) => {
           <label className="label">country: </label>
           <input 
                   
-                  id="country"
-                  className="input"
+                  data-testid="country"
                   type="search"
                   required
                   onChange={(e)=>{
@@ -84,8 +80,7 @@ const BookSearch = ({books}) => {
                   }}></input><br/>
           <label className="label">language: </label>
           <input 
-                 id="language"
-                  className="input"
+                  data-testid="language"
                   type="text"
                   required
                   onChange={(e)=>{
@@ -96,8 +91,7 @@ const BookSearch = ({books}) => {
                   }}></input><br/>
           <label className="label">year: </label>
           <input
-                  id="year"
-                  className="input"
+                  data-testid="year"
                   type="text"
                   required
                   onChange={(e)=>{
@@ -106,14 +100,11 @@ const BookSearch = ({books}) => {
                   payload: e.target.value,
                   })
                   }}></input>
-
-</div>
-        <div className="title"> 
+        <div > 
           {transformBooks().map((book)=>(
             <BookShow key={book.key} book={book}/>     
           ))} 
         </div>
-
       </div>
   );
 };
