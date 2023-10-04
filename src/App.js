@@ -1,23 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import ReactDOM from "react-dom";
+import BookSearch from "./components/BookSearch";
 
-function App() {
+/* Changes made to this file will not affect your tests.
+ * This file is used to control the behavior of the web preview. 
+*/
+
+const books = [
+  {
+    "author": "Chinua Achebe",
+    "country": "Nigeria",
+    "language": "English",
+    "pages": 209,
+    "title": "Things Fall Apart",
+    "year": 1958
+  },
+  {
+    "author": "Dante Alighieri",
+    "country": "Italy",
+    "language": "Italian",
+    "pages": 928,
+    "title": "The Divine Comedy",
+    "year": 1315
+  },
+  {
+    "author": "Virginia Woolf",
+    "country": "United Kingdom",
+    "language": "English",
+    "pages": 216,
+    "title": "Mrs Dalloway",
+    "year": 1925
+  },
+  {
+    "author": "Virginia Woolf",
+    "country": "United Kingdom",
+    "language": "English",
+    "pages": 209,
+    "title": "To the Lighthouse",
+    "year": 1927
+  },
+];
+
+const App = props => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id="app">
+      <BookSearch books={books} />
     </div>
   );
 }
