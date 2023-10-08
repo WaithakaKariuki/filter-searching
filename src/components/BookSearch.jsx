@@ -2,12 +2,11 @@ import React  from "react";
 import {useReducer} from 'react'
 import BookShow from "./BookShow"
 import './styles.css'
-import {bookReducer} from './Reducer'  //import the reducer function
+import {bookReducer} from './Reducer'  
 
 
 const BookSearch = ({books}) => {
-    // TODO your code here
-    // Add a useReducer hook and dispatch actions to change the initial state to the current state 
+ 
   const [bookState, bookDispatch] = useReducer(bookReducer,{
     searchAuthor:"",
     searchTitle:"",
@@ -16,11 +15,11 @@ const BookSearch = ({books}) => {
     searchYear:"",
   })
   
-  // add if statements and the filter array method to return books to display
+
   const transformBooks = () =>{
     let sortedBooks = books
     if (bookState.searchAuthor){
-      sortedBooks = sortedBooks.filter((book) => // filter all the books and return only those that include the search query
+      sortedBooks = sortedBooks.filter((book) => 
         book.author.toLowerCase().includes(bookState.searchAuthor)
       )}
     if(bookState.searchTitle){
@@ -29,12 +28,12 @@ const BookSearch = ({books}) => {
       )}
      if (bookState.searchCountry){
       sortedBooks = sortedBooks.filter((book) =>
-    book.country.toLowerCase().includes(bookState.searchCountry)    
+    book.country.toUpperCase().includes(bookState.searchCountry)    
                                  )}
     if (bookState.searchLanguage){
       sortedBooks = sortedBooks.filter((book) =>
-    book.language.toLowerCase().includes(bookState.searchLanguage)    
-                                 )}
+    book.language.toLowerCase().includes(bookState.searchLanguage)
+      )}
     if (bookState.searchYear){
       sortedBooks = sortedBooks.filter((book) =>
     book.year.toString().includes(bookState.searchYear)    
@@ -46,7 +45,7 @@ const BookSearch = ({books}) => {
         <div className="main2">
          <span className="label">author: </span>
           <input
-                  id="author"
+                  data-testid="author"
                   className="input"
                   type="text"
                   required
@@ -59,7 +58,7 @@ const BookSearch = ({books}) => {
            </input><br/>
           <label className="label">title:  </label>
           <input 
-                  id="title"
+                  data-testid="title"
                   className="input"
                   type="text"
                   required
@@ -72,9 +71,9 @@ const BookSearch = ({books}) => {
           <label className="label">country: </label>
           <input 
                   
-                  id="country"
+                  data-testid="country"
                   className="input"
-                  type="search"
+                  type="text"
                   required
                   onChange={(e)=>{
                   bookDispatch({
@@ -84,7 +83,7 @@ const BookSearch = ({books}) => {
                   }}></input><br/>
           <label className="label">language: </label>
           <input 
-                 id="language"
+                 data-testid="language"
                   className="input"
                   type="text"
                   required
@@ -96,7 +95,7 @@ const BookSearch = ({books}) => {
                   }}></input><br/>
           <label className="label">year: </label>
           <input
-                  id="year"
+                  data-testid="year"
                   className="input"
                   type="text"
                   required
@@ -109,8 +108,8 @@ const BookSearch = ({books}) => {
 
 </div>
         <div className="title"> 
-          {transformBooks().map((book)=>(
-            <BookShow key={book.key} book={book}/>     
+          {(transformBooks()).map((book, idx)=>(
+            <BookShow data-testid="book" key={idx} book={book}/>     
           ))} 
         </div>
 

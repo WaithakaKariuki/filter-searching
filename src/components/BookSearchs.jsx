@@ -2,12 +2,11 @@ import React  from "react";
 import {useReducer} from 'react'
 import BookShow from "./BookShow"
 import './styles.css'
-import {bookReducer} from './Reducer'  //import the reducer function
+import {bookReducer} from './Reducer'  
 
 
-const BookSearch = ({books}) => {
-    // TODO your code here
-    // Add a useReducer hook and dispatch actions to change the initial state to the current state 
+const BookSearchs = ({books}) => {
+
   const [bookState, bookDispatch] = useReducer(bookReducer,{
     searchAuthor:"",
     searchTitle:"",
@@ -16,11 +15,11 @@ const BookSearch = ({books}) => {
     searchYear:"",
   })
   
-  // add if statements and the filter array method to return books to display
+
   const transformBooks = () =>{
     let sortedBooks = books
     if (bookState.searchAuthor){
-      sortedBooks = sortedBooks.filter((book) => // filter all the books and return only those that include the search query
+      sortedBooks = sortedBooks.filter((book) => 
         book.author.toLowerCase().includes(bookState.searchAuthor)
       )}
     if(bookState.searchTitle){
@@ -102,11 +101,11 @@ const BookSearch = ({books}) => {
                   }}></input>
         <div > 
           {transformBooks().map((book)=>(
-            <BookShow key={book.key} book={book}/>     
+            <BookShow   key={book.key} book={book}/>     
           ))} 
         </div>
       </div>
   );
 };
 
-export default BookSearch;
+export default BookSearchs;

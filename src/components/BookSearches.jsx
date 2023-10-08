@@ -1,6 +1,6 @@
 import {React, useState} from 'react'
 
-function BookShows({books}) {
+function BookSearches({books}) {
 
   const [filterBy, setFilterBy] = useState({
     author:"",
@@ -14,7 +14,7 @@ function BookShows({books}) {
     const key = e.target.name
     setFilterBy({
       ...filterBy,
-      [key]:e.target.value
+      key:e.target.value
     })
   }
 
@@ -44,8 +44,60 @@ function BookShows({books}) {
  }
 
 
-  const showBooks = (transformBooks()).map((book,idx) => {
-    return(
+
+  // const showBooks = 
+
+  return (
+    <>
+    <div className="main" >
+        <div className="main2">
+         <span className="label">author: </span>
+          <input
+                  name="author"
+                  required
+                  data-testid="author"
+                  className="input"
+                  type="text"
+                  onChange={(e)=>handleChange(e)}>
+           </input><br/>
+          <label className="label">title:  </label>
+          <input 
+                  data-testid="title"
+                  required
+                  name="title"
+                  className="input"
+                  type="text"
+                  onChange={(e)=>handleChange(e)}
+                  ></input><br/>
+          <label className="label">country: </label>
+          <input 
+                  
+                  data-testid="country"
+                  required
+                  name="country"
+                  className="input"
+                  type="search"
+                  onChange={(e)=>handleChange(e)}></input><br/>
+          <label className="label">language: </label>
+          <input 
+                  data-testid="language"
+                  required
+                  name="language"
+                  className="input"
+                  type="text"
+                  onChange={(e)=>handleChange(e)}></input><br/>
+          <label className="label">year: </label>
+          <input
+                  data-testid="year"
+                  required
+                  name="year"
+                  className="input"
+                  type="text"
+                  onChange={(e)=>handleChange(e)}></input>
+
+        </div>
+        <div className="title">
+          {transformBooks().map((book,idx) => (
     <div key={idx} data-testid="book" className="show">
       <div className='main1'>
       <span className="span">author:</span>
@@ -62,58 +114,11 @@ function BookShows({books}) {
         <label className="label">{book.year}</label>
         </div>
     </div>)
-  })
-
-  // console.log(Object.values(filterBy))
-  console.log(filterBy.author )
-  return (
-    <div className="main" >
-        <div className="main2">
-         <span className="label">author: </span>
-          <input
-                  name="author"
-                  data-testid="author"
-                  className="input"
-                  type="text"
-                  onChange={(e)=>handleChange(e)}>
-           </input><br/>
-          <label className="label">title:  </label>
-          <input 
-                  data-testid="title"
-                  name="title"
-                  className="input"
-                  type="text"
-                  onChange={(e)=>handleChange(e)}
-                  ></input><br/>
-          <label className="label">country: </label>
-          <input 
-                  
-                  data-testid="country"
-                  name="country"
-                  className="input"
-                  type="search"
-                  onChange={(e)=>handleChange(e)}></input><br/>
-          <label className="label">language: </label>
-          <input 
-                  data-testid="language"
-                  name="language"
-                  className="input"
-                  type="text"
-                  onChange={(e)=>handleChange(e)}></input><br/>
-          <label className="label">year: </label>
-          <input
-                  data-testid="year"
-                  name="year"
-                  className="input"
-                  type="text"
-                  onChange={(e)=>handleChange(e)}></input>
-
-        </div>
-        <div className="title">
-          {showBooks}
+  )}
         </div>
     </div>
+    </>
   )
 }
 
-export default BookShows
+export default BookSearches

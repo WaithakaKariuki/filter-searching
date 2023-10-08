@@ -8,7 +8,7 @@ import {
   within,
 } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import BookSearches from "../components/BookSearches";
+import BookSearch from "../components/BookSearch";
 const {
   getAllByTestId,
   getByTestId,
@@ -25,10 +25,10 @@ describe("BookSearch", () => {
   });
   beforeEach(() => {
     books = JSON.parse(booksData);
-    render(<BookSearches books={books} />);
+    render(<BookSearch books={books} />);
   });
 
-  describe.only("the correct elements were rendered", () => {
+  describe("the correct elements were rendered", () => {
     it("should have 5 input elements for required search fields", () => {
       expect(getByTestId("author")).toBeInTheDocument();
       expect(getByTestId("title")).toBeInTheDocument();
