@@ -14,9 +14,6 @@ const BookSearch = ({books}) => {
     searchLanguage:"",
     searchYear:"",
   })
-  
-const regexUpper = /[A-Z]/;
-const regexLower = /[a-z]/;
 
   const transformBooks = () =>{
     let sortedBooks = books
