@@ -8,6 +8,7 @@ import BookSearch from "./components/BookSearch";
 /* Changes made to this file will not affect your tests.
  * This file is used to control the behavior of the web preview. 
 */
+//The BookSearch passed all but one test.
 
 let books = [
   {
@@ -56,7 +57,7 @@ const App = () => {
   },[])
   return (
     <div id="app">
-      <BookSearch books={books} />
+      <BookSearch books={books} /> 
       {/* <BookSearchs books={books} /> */}
       {/* <BookSearches books={books} /> */}
     </div>

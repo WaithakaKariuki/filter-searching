@@ -1,5 +1,9 @@
 import {React, useState} from 'react'
 
+
+//In order to pass all the tests, the trim for all fields, 
+// you need to find a method that removes all whitespaces from the input fields.
+
 function BookSearches({books}) {
 
   const [filterBy, setFilterBy] = useState({
