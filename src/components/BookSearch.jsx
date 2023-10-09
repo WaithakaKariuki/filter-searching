@@ -15,6 +15,8 @@ const BookSearch = ({books}) => {
     searchYear:"",
   })
   
+const regexUpper = /[A-Z]/;
+const regexLower = /[a-z]/;
 
   const transformBooks = () =>{
     let sortedBooks = books
@@ -32,7 +34,7 @@ const BookSearch = ({books}) => {
                                  )}
     if (bookState.searchLanguage){
       sortedBooks = sortedBooks.filter((book) =>
-    book.language.toLowerCase().includes(bookState.searchLanguage)
+    book.language.toLowerCase().includes((bookState.searchLanguage).toLowerCase())
       )}
     if (bookState.searchYear){
       sortedBooks = sortedBooks.filter((book) =>
