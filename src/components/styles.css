@@ -16,11 +16,11 @@
     flex-wrap: wrap;
     flex-shrink: 0;
 }
-.author{
+/* .author{
     margin: 1em;
     margin-bottom: 2em;
     flex-wrap: wrap-reverse;
-}  
+}   */
 .label{
     padding-left: 20px;
     padding-block: 5px;
