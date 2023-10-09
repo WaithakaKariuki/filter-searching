@@ -57,8 +57,8 @@ const App = () => {
   return (
     <div id="app">
       <BookSearch books={books} />
-      <BookSearchs books={books} />
-      <BookSearches books={books} />
+      {/* <BookSearchs books={books} /> */}
+      {/* <BookSearches books={books} /> */}
     </div>
   );
 }

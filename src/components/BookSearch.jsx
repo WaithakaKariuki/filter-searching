@@ -19,11 +19,11 @@ const BookSearch = ({books}) => {
     let sortedBooks = books
     if (bookState.searchAuthor){
       sortedBooks = sortedBooks.filter((book) => 
-        book.author.toLowerCase().includes(bookState.searchAuthor)
+        book.author.toLowerCase().includes((bookState.searchAuthor.replace(/ /g, '') ))
       )}
     if(bookState.searchTitle){
         sortedBooks = sortedBooks.filter((book) =>
-        book.title.toLowerCase().includes(bookState.searchTitle) 
+        book.title.toLowerCase().includes((bookState.searchTitle.replace(/ /g, '') ))
       )}
      if (bookState.searchCountry){
       sortedBooks = sortedBooks.filter((book) =>
