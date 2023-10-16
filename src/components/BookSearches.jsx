@@ -21,7 +21,9 @@ function BookSearches({books}) {
       key:e.target.value
     })
   }
+ 
 
+  // this function returns an array of filtered books according to the userinputs
  function transformBooks(){
   let sortedBooks = books
   if (filterBy.author){
@@ -46,10 +48,6 @@ function BookSearches({books}) {
                                )}
   return sortedBooks
  }
-
-
-
-  // const showBooks = 
 
   return (
     <>
