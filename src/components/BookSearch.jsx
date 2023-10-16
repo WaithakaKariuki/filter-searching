@@ -14,7 +14,7 @@ const BookSearch = ({books}) => {
     searchLanguage:"",
     searchYear:"",
   })
-
+  // this function returns an array of filtered books according to the userinputs
   const transformBooks = () =>{
     let sortedBooks = books
     if (bookState.searchAuthor){
