@@ -19,7 +19,7 @@ const BookSearch = ({books}) => {
     let sortedBooks = books
     if (bookState.searchAuthor){
       sortedBooks = sortedBooks.filter((book) => 
-        book.author.toLowerCase().includes((bookState.searchAuthor.replace(/ /g, '') ))
+        book.author.toLowerCase().includes((bookState.searchAuthor.replace(/ /g, '') )) //remove whitespaces from user input
       )}
     if(bookState.searchTitle){
         sortedBooks = sortedBooks.filter((book) =>
