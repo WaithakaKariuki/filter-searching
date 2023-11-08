@@ -1,4 +1,4 @@
-## Code challenge Description
+## Assesment challenge Description
 
 The assessment requires that using React, the candidate should creaate a search system for books stored as json, using different parameters. As the candidate, I used the useReducer hook to change the states of the displayed books, changing what books to diplay as I input the search query.
 The candidate is also required to use basic css to style the displayed books.
